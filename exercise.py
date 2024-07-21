@@ -86,7 +86,6 @@
 
 def calculate_dog_years():
     # Your control flow logic goes here
-
     dog_age = int(input("Input a dog's age: "))
 
     if dog_age >= 2:
