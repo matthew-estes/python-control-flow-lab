@@ -84,17 +84,53 @@
 # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
 
-def calculate_dog_years():
-    # Your control flow logic goes here
-    dog_age = int(input("Input a dog's age: "))
+# def calculate_dog_years():
+#     # Your control flow logic goes here
+#     dog_age = int(input("Input a dog's age: "))
 
-    if dog_age >= 2:
-        calculated_dog_years = 20 + ((dog_age - 2) * 7)
-        print(f"The dog's age in dog years is {calculated_dog_years}")
+#     if dog_age >= 2:
+#         calculated_dog_years = 20 + ((dog_age - 2) * 7)
+#         print(f"The dog's age in dog years is {calculated_dog_years}")
+#     else:
+#         calculated_dog_years = dog_age * 10
+#         print(f"The dog's age in dog years is {calculated_dog_years}")
+
+
+# # Call the function
+# calculate_dog_years()
+
+
+# Exercise 4: Weather Advice
+#
+# Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
+#
+# Requirements:
+# - The script should prompt the user to enter if it is cold (yes/no).
+# - Then, ask if it is raining (yes/no).
+# - Use logical operators to determine clothing advice:
+#   - If it is cold AND raining, print "Wear a waterproof coat."
+#   - If it is cold BUT NOT raining, print "Wear a warm coat."
+#   - If it is NOT cold but raining, print "Carry an umbrella."
+#   - If it is NOT cold AND NOT raining, print "Wear light clothing."
+#
+# Hints:
+# - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
+
+
+def weather_advice():
+    # Your control flow logic goes here
+    is_cold = input("Is it cold? ").lower()
+    is_raining = input("Is it raining? ").lower()
+
+    if is_cold == "yes" and is_raining == "yes":
+        print("Wear a waterproof coat.")
+    elif is_cold == "yes" and is_raining == "no":
+        print("Wear a warm coat.")
+    elif is_cold == "no" and is_raining == "yes":
+        print("Carry an umbrella.")
     else:
-        calculated_dog_years = dog_age * 10
-        print(f"The dog's age in dog years is {calculated_dog_years}")
+        print("Wear light clothing.")
 
 
 # Call the function
-calculate_dog_years()
+weather_advice()
