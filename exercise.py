@@ -16,20 +16,20 @@
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
 
-# def check_letter():
-#     letter = input("Enter a letter (a-z or A-Z): ").lower()
+def check_letter():
+    letter = input("Enter a letter (a-z or A-Z): ").lower()
 
-#     if len(letter) == 1 and letter.isalpha():
-#         if letter in "aeiou":
-#             print(f"The letter {letter} is a vowel.")
-#         else:
-#             print(f"The letter {letter} is a consonant.")
-#     else:
-#         print("Invalid input. Please try again.")
+    if len(letter) == 1 and letter.isalpha():
+        if letter in "aeiou":
+            print(f"The letter {letter} is a vowel.")
+        else:
+            print(f"The letter {letter} is a consonant.")
+    else:
+        print("Invalid input. Please try again.")
 
 
-# # Call the function
-# check_letter()
+# Call the function
+check_letter()
 
 
 # Exercise 2: Old enough to vote?
@@ -49,21 +49,21 @@
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
 
-# def check_voting_eligibility():
-#     voting_age = 18
+def check_voting_eligibility():
+    voting_age = 18
 
-#     try:
-#         age = int(input("Please enter your age: "))
-#         if age >= voting_age:
-#             print("You are eligible to vote.")
-#         else:
-#             print("Sorry, you are not eligible to vote at this time.")
-#     except:
-#         print("Please enter a valid age.")
+    try:
+        age = int(input("Please enter your age: "))
+        if age >= voting_age:
+            print("You are eligible to vote.")
+        else:
+            print("Sorry, you are not eligible to vote at this time.")
+    except:
+        print("Please enter a valid age.")
 
 
-# # Call the function
-# check_voting_eligibility()
+# Call the function
+check_voting_eligibility()
 
 # Exercise 3: Calculate Dog Years
 #
@@ -84,20 +84,20 @@
 # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
 
-# def calculate_dog_years():
-#     # Your control flow logic goes here
-#     dog_age = int(input("Input a dog's age: "))
+def calculate_dog_years():
+    # Your control flow logic goes here
+    dog_age = int(input("Input a dog's age: "))
 
-#     if dog_age >= 2:
-#         calculated_dog_years = 20 + ((dog_age - 2) * 7)
-#         print(f"The dog's age in dog years is {calculated_dog_years}")
-#     else:
-#         calculated_dog_years = dog_age * 10
-#         print(f"The dog's age in dog years is {calculated_dog_years}")
+    if dog_age >= 2:
+        calculated_dog_years = 20 + ((dog_age - 2) * 7)
+        print(f"The dog's age in dog years is {calculated_dog_years}")
+    else:
+        calculated_dog_years = dog_age * 10
+        print(f"The dog's age in dog years is {calculated_dog_years}")
 
 
-# # Call the function
-# calculate_dog_years()
+# Call the function
+calculate_dog_years()
 
 
 # Exercise 4: Weather Advice
@@ -134,3 +134,60 @@ def weather_advice():
 
 # Call the function
 weather_advice()
+
+
+# Exercise 5: What's the Season?
+#
+# Write a Python function named `determine_season` that figures out the season based on the entered date.
+#
+# Requirements:
+# - The function should first prompt the user to enter the month (as three characters): "Enter the month of the year (Jan - Dec):"
+# - Then, the function should prompt the user to enter the day of the month: "Enter the day of the month:"
+# - Determine the current season based on the date:
+#      - Dec 21 - Mar 19: Winter
+#      - Mar 20 - Jun 20: Spring
+#      - Jun 21 - Sep 21: Summer
+#      - Sep 22 - Dec 20: Fall
+# - Print the season for the entered date in the format: "<Mmm> <dd> is in <season>."
+#
+# Hints:
+# - Use 'in' to check if a string is in a list or tuple.
+# - Adjust the season based on the day of the month when needed.
+# - Ensure to validate input formats and handle unexpected inputs gracefully.
+
+
+def determine_season():
+    # Your control flow logic goes here
+    Mmm = input("Enter the month of the year (Jan - Dec): ").strip().capitalize()
+    dd = input("Enter the day of the month: ").strip()
+
+    if (
+        (Mmm == "Dec" and dd >= 21)
+        or (Mmm in ["Jan", "Feb"])
+        or (Mmm == "Mar" and dd <= 19)
+    ):
+        season = "Winter"
+    if (
+        (Mmm == "Mar" and dd >= 20)
+        or (Mmm in ["Apr", "May"])
+        or (Mmm == "Jun" and dd <= 20)
+    ):
+        season = "Spring"
+    if (
+        (Mmm == "Jun" and dd >= 21)
+        or (Mmm in ["Jul", "Aug"])
+        or (Mmm == "Sep" and dd <= 21)
+    ):
+        season = "Summer"
+    if (
+        (Mmm == "Sep" and dd >= 22)
+        or (Mmm in ["Oct", "Nov"])
+        or (Mmm == "Dec" and dd <= 20)
+    ):
+        season = "Fall"
+
+    print(f"{Mmm} {dd} is in {season}.")
+
+
+# Call the function
+determine_season()
